@@ -24,12 +24,12 @@ interface MenuItem {
 }
 
 const menuItems: MenuItem[] = [
-  { id: 1, name: 'Трюфельный крем-суп', description: 'С белыми трюфелями и хрустящими крутонами', price: 2500, category: 'Супы', image: '/placeholder.svg' },
-  { id: 2, name: 'Мраморная говядина', description: 'Стейк из мраморной говядины с соусом демигляс', price: 4500, category: 'Горячее', image: '/placeholder.svg' },
-  { id: 3, name: 'Лобстер термидор', description: 'Классическое французское блюдо с лобстером', price: 5800, category: 'Горячее', image: '/placeholder.svg' },
-  { id: 4, name: 'Тартар из лосося', description: 'Свежий лосось с авокадо и икрой', price: 3200, category: 'Холодные закуски', image: '/placeholder.svg' },
-  { id: 5, name: 'Фуа-гра', description: 'С карамелизированными грушами и портвейном', price: 4200, category: 'Холодные закуски', image: '/placeholder.svg' },
-  { id: 6, name: 'Тирамису', description: 'Классический итальянский десерт', price: 1800, category: 'Десерты', image: '/placeholder.svg' },
+  { id: 1, name: 'Трюфельный крем-суп', description: 'С белыми трюфелями и хрустящими крутонами', price: 2500, category: 'Супы', image: 'https://cdn.poehali.dev/projects/73c9147b-2cbd-4dd6-843a-54b4ee70cff6/files/a6696970-4f87-4095-b808-9c29003ef010.jpg' },
+  { id: 2, name: 'Мраморная говядина', description: 'Стейк из мраморной говядины с соусом демигляс', price: 4500, category: 'Горячее', image: 'https://cdn.poehali.dev/projects/73c9147b-2cbd-4dd6-843a-54b4ee70cff6/files/6eeb40bc-724d-4305-a4f7-63ae373c0552.jpg' },
+  { id: 3, name: 'Лобстер термидор', description: 'Классическое французское блюдо с лобстером', price: 5800, category: 'Горячее', image: 'https://cdn.poehali.dev/projects/73c9147b-2cbd-4dd6-843a-54b4ee70cff6/files/1d94bbb6-85c4-4740-b89d-acec5764ae1d.jpg' },
+  { id: 4, name: 'Тартар из лосося', description: 'Свежий лосось с авокадо и икрой', price: 3200, category: 'Холодные закуски', image: 'https://cdn.poehali.dev/projects/73c9147b-2cbd-4dd6-843a-54b4ee70cff6/files/439f1138-227c-46be-a805-bf6991739e40.jpg' },
+  { id: 5, name: 'Фуа-гра', description: 'С карамелизированными грушами и портвейном', price: 4200, category: 'Холодные закуски', image: 'https://cdn.poehali.dev/projects/73c9147b-2cbd-4dd6-843a-54b4ee70cff6/files/e07e9d8d-3f46-471a-b290-f753f9c9e40a.jpg' },
+  { id: 6, name: 'Тирамису', description: 'Классический итальянский десерт', price: 1800, category: 'Десерты', image: 'https://cdn.poehali.dev/projects/73c9147b-2cbd-4dd6-843a-54b4ee70cff6/files/ce8d34e5-5c08-459f-846d-e4d002154b27.jpg' },
 ];
 
 const services = [
@@ -40,10 +40,10 @@ const services = [
 ];
 
 const portfolio = [
-  { title: 'Свадьба в усадьбе', guests: 150, image: '/placeholder.svg' },
-  { title: 'Корпоратив IT-компании', guests: 300, image: '/placeholder.svg' },
-  { title: 'Юбилей 50 лет', guests: 80, image: '/placeholder.svg' },
-  { title: 'Деловой ужин', guests: 40, image: '/placeholder.svg' },
+  { title: 'Свадьба в усадьбе', guests: 150, image: 'https://cdn.poehali.dev/projects/73c9147b-2cbd-4dd6-843a-54b4ee70cff6/files/ada877b6-b041-4754-be85-5fbac86f1b97.jpg' },
+  { title: 'Корпоратив IT-компании', guests: 300, image: 'https://cdn.poehali.dev/projects/73c9147b-2cbd-4dd6-843a-54b4ee70cff6/files/4e6abaec-0c2d-4e84-8082-65e3e9179a03.jpg' },
+  { title: 'Юбилей 50 лет', guests: 80, image: 'https://cdn.poehali.dev/projects/73c9147b-2cbd-4dd6-843a-54b4ee70cff6/files/930ea987-4af3-4fd7-937d-862bd38920a8.jpg' },
+  { title: 'Деловой ужин', guests: 40, image: 'https://cdn.poehali.dev/projects/73c9147b-2cbd-4dd6-843a-54b4ee70cff6/files/404417fc-0854-448f-9813-acf95de303d7.jpg' },
 ];
 
 const reviews = [
@@ -148,8 +148,8 @@ export default function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredMenu.map(item => (
               <Card key={item.id} className="hover:shadow-2xl transition-shadow animate-scale-in overflow-hidden border-2 border-gold/20">
-                <div className="h-48 bg-gradient-to-br from-gold/20 to-gray-100 flex items-center justify-center">
-                  <Icon name="ChefHat" size={64} className="text-gold/40" />
+                <div className="h-48 bg-gradient-to-br from-gold/20 to-gray-100 flex items-center justify-center overflow-hidden">
+                  <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
                 </div>
                 <CardHeader>
                   <CardTitle className="font-serif text-2xl">{item.name}</CardTitle>
@@ -203,8 +203,8 @@ export default function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {portfolio.map(item => (
               <Card key={item.title} className="overflow-hidden hover:shadow-xl transition-shadow border-2 border-gold/20">
-                <div className="h-48 bg-gradient-to-br from-gold/30 to-gray-200 flex items-center justify-center">
-                  <Icon name="Camera" size={48} className="text-gold/50" />
+                <div className="h-48 bg-gradient-to-br from-gold/30 to-gray-200 flex items-center justify-center overflow-hidden">
+                  <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
                 </div>
                 <CardContent className="pt-4">
                   <h3 className="font-serif text-xl font-semibold mb-2">{item.title}</h3>
